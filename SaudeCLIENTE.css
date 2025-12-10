@@ -1,0 +1,85 @@
+/* Estilos gerais */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+}
+
+/* Topo */
+.topbar{
+  background:#0b6b9a;
+  padding:20px;
+  text-align:center;
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* Container */
+.container{
+  display:flex;
+  justify-content:center;
+  padding:30px;
+}
+
+/* Card */
+.card{
+  background:white;
+  width:100%;
+  max-width:450px;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* Inputs */
+label{
+  font-weight:bold;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin:6px 0 15px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:15px;
+}
+
+/* Botão */
+.btn{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  background:#0b6b9a;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.btn:hover{
+  background:#094d70;
+}
+
+/* Mensagem de sucesso */
+.success{
+  margin-top:20px;
+  padding:12px;
+  background:#c8f7c5;
+  color:#0f6300;
+  text-align:center;
+  border-radius:8px;
+  font-weight:bold;
+}
