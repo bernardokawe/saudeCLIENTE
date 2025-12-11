@@ -1,85 +1,129 @@
-/* Estilos gerais */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --accent: #007bff;
+    --muted: #6b7280;
+    font-family: Inter, system-ui, sans-serif;
 }
 
-body{
-  background:#f5f7fb;
+/* ======= BASE ======= */
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #111;
 }
 
-/* Topo */
-.topbar{
-  background:#0b6b9a;
-  padding:20px;
-  text-align:center;
-  color:white;
-  font-size:20px;
-  font-weight:bold;
+/* ======= HEADER ======= */
+header {
+    background: var(--card);
+    padding: 18px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Container */
-.container{
-  display:flex;
-  justify-content:center;
-  padding:30px;
+/* ======= CONTAINER ======= */
+.container {
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 0 16px;
 }
 
-/* Card */
-.card{
-  background:white;
-  width:100%;
-  max-width:450px;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+/* ======= GRID ======= */
+.grid {
+    display: grid;
+    gap: 18px;
 }
 
-h2{
-  text-align:center;
-  margin-bottom:20px;
+.cols-2 {
+    grid-template-columns: 2fr 1fr;
 }
 
-/* Inputs */
-label{
-  font-weight:bold;
+/* ======= CARD ======= */
+.card {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-input{
-  width:100%;
-  padding:10px;
-  margin:6px 0 15px 0;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:15px;
+/* ======= FORM ======= */
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: var(--muted);
 }
 
-/* Botão */
-.btn{
-  width:100%;
-  padding:12px;
-  font-size:16px;
-  background:#0b6b9a;
-  color:white;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.2s;
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
 }
 
-.btn:hover{
-  background:#094d70;
+button {
+    background: var(--accent);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
 }
 
-/* Mensagem de sucesso */
-.success{
-  margin-top:20px;
-  padding:12px;
-  background:#c8f7c5;
-  color:#0f6300;
-  text-align:center;
-  border-radius:8px;
-  font-weight:bold;
+button:hover {
+    background: #0062cc;
+}
+
+/* ======= TEXTO ======= */
+.small {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ======= FILA ======= */
+.queue-list {
+    max-height: 320px;
+    overflow: auto;
+    margin-top: 10px;
+    padding: 8px;
+}
+
+.queue-item {
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: white;
+}
+
+/* ======= PAINEL ======= */
+.panel-large {
+    padding: 22px;
+    border-radius: 14px;
+    background: var(--card);
+}
+
+.painel-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+/* ======= GRID ESPECIAL ======= */
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    gap: 10px;
+}
+
+/* ======= ÁREA DE ENVIO ======= */
+.submit-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
 }
