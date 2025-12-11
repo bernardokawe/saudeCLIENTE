@@ -2,87 +2,101 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sistema SUS - Cadastro</title>
-<link rel="stylesheet" href="SaudeCLIENTE.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Título da aba do navegador -->
+    <title>Sistema SUS - Cadastro</title>
+
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="SaudeCLIENTE.css" />
 </head>
 <body>
+
 <header>
-<h1>Sistema Saúde (SUS) — Cadastro e Painel</h1>
-<div class="small">Protótipo front-end — sem integração com servidor</div>
+    <!-- Título principal da página -->
+    <h1>Sistema Saúde (SUS) — Cadastro e Painel</h1>
 </header>
 
-
 <main class="container">
+
 <div class="grid cols-2">
-<section class="card">
-<h3>Cadastro do Paciente</h3>
-<p class="small">Preencha os dados para emitir uma senha/ordem de atendimento.</p>
 
+    <!-- SEÇÃO DE CADASTRO DO PACIENTE -->
+    <section class="card">
+        <h3>Cadastro do Paciente</h3>
+        <p class="small">Preencha os dados para emitir uma senha/ordem de atendimento.</p>
 
-<form id="formCadastro">
-<div class="grid-two">
-<div>
-<label for="nome">Nome completo</label>
-<input id="nome" required placeholder="Nome do paciente" />
+        <!-- Formulário de cadastro -->
+        <form id="formCadastro">
+            
+            <!-- Linha com nome e idade lado a lado -->
+            <div class="grid-two">
+                <div>
+                    <label for="nome">Nome completo</label>
+                    <input id="nome" required placeholder="Nome do paciente" />
+                </div>
+
+                <div>
+                    <label for="idade">Idade</label>
+                    <input id="idade" type="number" min="0" required />
+                </div>
+            </div>
+
+            <!-- Campo opcional do CPF -->
+            <label for="cpf">CPF (opcional)</label>
+            <input id="cpf" placeholder="000.000.000-00" />
+
+            <!-- Seleção do tipo de serviço desejado -->
+            <label for="servico">Serviço</label>
+            <select id="servico">
+                <option value="consulta">Consulta geral</option>
+                <option value="enfermagem">Enfermagem</option>
+                <option value="odontologia">Odontologia</option>
+                <option value="vacina">Vacinação</option>
+            </select>
+
+            <!-- Campo de observações adicionais -->
+            <label for="observacao">Observação</label>
+            <textarea id="observacao" rows="2"></textarea>
+
+            <!-- Botão de envio + Exibição da próxima senha -->
+            <div class="submit-area">
+                <button type="submit">Emitir senha</button>
+                <div class="small">Senha atual: <strong id="proxSenha">A-001</strong></div>
+            </div>
+        </form>
+
+        <!-- Lista onde aparecerá a fila pública de atendimento -->
+        <h4>Fila de Atendimento</h4>
+        <div id="filaPublica" class="queue-list card"></div>
+    </section>
+
+    <!-- PAINEL DIGITAL (lado direito) -->
+    <aside class="card panel-large">
+        <h3>Painel Digital</h3>
+
+        <div class="painel-info">
+            <!-- Próxima senha chamada -->
+            <div>
+                <div class="small">Próxima senha</div>
+                <h2 id="painel_proxima">—</h2>
+            </div>
+
+            <!-- Tempo médio estimado (simulação) -->
+            <div>
+                <div class="small">Tempo médio estimado</div>
+                <h3 id="tempoEstimado">—</h3>
+            </div>
+        </div>
+
+    </aside>
 </div>
-<div>
-<label for="idade">Idade</label>
-<input id="idade" type="number" min="0" required />
-</div>
-</div>
-
-<label for="cpf">CPF (opcional)</label>
-<input id="cpf" placeholder="000.000.000-00" />
-
-
-<label for="servico">Serviço</label>
-<select id="servico">
-<option value="consulta">Consulta geral</option>
-<option value="enfermagem">Enfermagem</option>
-<option value="odontologia">Odontologia</option>
-<option value="vacina">Vacinação</option>
-</select>
-
-
-<label for="observacao">Observação</label>
-<textarea id="observacao" rows="2"></textarea>
-
-
-<div class="submit-area">
-<button type="submit">Emitir senha</button>
-<div class="small">Senha atual: <strong id="proxSenha">A-001</strong></div>
-</div>
-</form>
-
-
-<h4>Fila de Atendimento</h4>
-<div id="filaPublica" class="queue-list card"></div>
-</section>
-
-
-<aside class="card panel-large">
-<h3>Painel Digital</h3>
-<div class="painel-info">
-<div>
-<div class="small">Próxima senha</div>
-<h2 id="painel_proxima">—</h2>
-</div>
-<div>
-<div class="small">Tempo médio estimado</div>
-<h3 id="tempoEstimado">—</h3>
-</div>
-</div>
-</aside>
-</div>
-
-
-
 
 </main>
 
-
+<!-- Importação do arquivo JavaScript do sistema -->
 <script src="SaudeCLIENTE.js"></script>
+
 </body>
 </html>
